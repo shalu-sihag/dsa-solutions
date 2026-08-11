@@ -1,0 +1,28 @@
+"""
+Description:
+Given an array where each element represents the stock price
+on a particular day, calculate the maximum profit by making
+as many buy-and-sell transactions as possible.
+
+Input:
+[7, 1, 5, 3, 6, 4]
+
+Output:
+7
+
+Time: O(n)
+Space: O(1)
+"""
+
+#solution
+def maxProfit(prices):
+    n=len(prices)
+    res = 0
+    for i in range(1,n):
+        if prices[i] > prices[i-1]:
+            res += prices[i] - prices[i-1]
+    return res
+    
+
+prices = [100, 180, 260, 310, 40, 535, 695]
+print(maxProfit(prices))

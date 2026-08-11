@@ -1,0 +1,32 @@
+"""
+Description:
+Given an array, move all 0s to the end while maintaining
+the relative order of the non-zero elements.
+The operation should be performed in-place.
+
+Input:
+[65, 34, 0, 23, 0, 0, 76, 94]
+
+Output:
+[65, 34, 23, 76, 94, 0, 0, 0]
+
+Time: O(n)
+Space: O(1)
+"""
+
+
+# Solution
+def moveAllZeroesToEnd(arr):
+    n = len(arr)
+    count = 0
+
+    for i in range(n):
+        if arr[i] != 0:
+            arr[count], arr[i] = arr[i], arr[count]
+            count += 1
+
+    return arr
+
+
+arr = [65, 34, 0, 23, 0, 0, 76, 94]
+print(moveAllZeroesToEnd(arr))

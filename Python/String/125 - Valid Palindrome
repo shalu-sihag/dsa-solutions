@@ -1,0 +1,28 @@
+"""
+Description:
+Given a string, determine whether it is a palindrome after
+converting uppercase letters to lowercase and removing all
+non-alphanumeric characters.
+
+Input:
+"A man, a plan, a canal: Panama"
+
+Output:
+True
+
+Time: O(n)
+Space: O(1)
+"""
+
+#solution
+def isPalindrome(s):
+    orig = ""
+    for ch in s:
+        if ch.isalnum():
+            orig += ch.lower()
+    return orig == orig[::-1]
+
+
+
+s=["A man, a plan, a canal: Panama"]
+print(isPalindrome(s))

@@ -1,0 +1,32 @@
+"""
+Description:
+Given a sorted array of integers and a target value, find the
+indices of two numbers whose sum is equal to the target.
+The array uses 1-based indexing.
+
+Input:
+[2, 7, 11, 15], target = 9
+
+Output:
+[1, 2]
+
+Time: O(n)
+Space: O(1)
+"""
+
+#solution
+def two_sum2(nums,target):
+    l , r = 0 , len(nums)-1
+    while l<r:
+        currSum = nums[l] + nums[r]
+        if currSum < target:
+            l+=1
+        elif currSum > target:
+            r-=1
+        else:
+            return [l+1 , r+1]
+
+
+target = 9
+nums = [2,7,11,15]
+print(two_sum2(nums,target))

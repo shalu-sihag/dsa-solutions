@@ -1,0 +1,29 @@
+"""
+Description:
+Given an array and an integer value, remove all occurrences
+of that value in-place and return the number of remaining elements.
+
+Input:
+nums = [3, 2, 2, 3], val = 3
+
+Output:
+2
+The first two elements can be [2, 2].
+
+Time: O(n)
+Space: O(1)
+"""
+
+#solution
+def removeElement(nums,val):
+    i = 0
+    while i < len(nums):
+        if nums[i] == val:
+            nums.pop(i)
+        else:
+            i+=1
+    return len(nums)
+
+nums=[29,7,9,34,7,23,7,54]
+val = 7
+print(removeElement(nums,val))

@@ -1,0 +1,16 @@
+"""
+Description:
+Given an array of integers, find all unique triplets whose sum
+is equal to 0. The solution must not contain duplicate triplets.
+
+Input:
+[-1, 0, 1, 2, -1, -4]
+
+Output:
+[[-1, -1, 2], [-1, 0, 1]]
+
+Time: O(n²)
+Space: O(1)
+"""
+
+#solution

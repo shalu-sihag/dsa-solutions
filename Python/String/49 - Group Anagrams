@@ -1,0 +1,27 @@
+"""
+Description:
+Given an array of strings, group the strings that are anagrams
+of each other. The order of the groups does not matter.
+
+Input:
+["eat", "tea", "tan", "ate", "nat", "bat"]
+
+Output:
+[["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
+
+Time: O(n × k log k)
+Space: O(n × k)
+"""
+
+#solution
+from collections import defaultdict
+def groupAnagrams(strs):
+    ans = defaultdict(list)
+    for s in strs:
+        key = "".join(sorted(s))
+        ans[key].append(s)
+    return list(ans.values())
+
+
+strs = ["eat","tea","tan","ate","nat","bat"]
+print(groupAnagrams(strs))

@@ -1,0 +1,17 @@
+"""
+Description:
+Given an array of integers and a target value, find all unique
+quadruplets whose sum is equal to the target.
+The solution must not contain duplicate quadruplets.
+
+Input:
+[1, 0, -1, 0, -2, 2], target = 0
+
+Output:
+[[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]
+
+Time: O(n³)
+Space: O(1)
+"""
+
+#solution

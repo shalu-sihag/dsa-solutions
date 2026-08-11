@@ -1,0 +1,35 @@
+"""
+Description:
+Given two strings, determine whether the second string is an
+anagram of the first string.
+
+Input:
+s = "anagram"
+t = "nagaram"
+
+Output:
+True
+
+Time: O(n)
+Space: O(n)
+"""
+
+#solution
+def validAnagram(s,t):
+    if len(s) != len(t):
+        return False
+    countS , countT ={},{}
+    for i in range(len(s)):
+        countS[s[i]] = 1+countS.get(s[i],0)
+        countT[t[i]] = 1+countT.get(t[i],0)
+
+    if countT != countS:
+        return False
+    return True
+
+
+
+
+s="cats"
+t="act"
+print(validAnagram(s,t))

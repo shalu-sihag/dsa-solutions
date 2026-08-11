@@ -1,0 +1,17 @@
+def getSecondLargest(arr):
+    # code here
+    largest = -1
+    sec_largest = -1
+    n=len(arr)
+    for i in range(n):
+        if arr[i] > largest:
+            largest = arr[i]
+    for i in range (n) :
+        if arr[i] > sec_largest and arr[i] != largest:
+            sec_largest = arr[i]
+    return sec_largest
+
+
+
+arr=[10,23,86,98,54,65]
+print(getSecondLargest(arr))

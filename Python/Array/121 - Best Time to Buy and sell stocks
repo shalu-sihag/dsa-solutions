@@ -1,0 +1,29 @@
+"""
+Description:
+Given an array where each element represents the stock price
+on a particular day, find the maximum profit possible by
+buying on one day and selling on a later day.
+
+Input:
+[7, 1, 5, 3, 6, 4]
+
+Output:
+5
+
+Time: O(n)
+Space: O(1)
+"""
+
+#solution
+def maxProfit(prices):
+    n=len(prices)
+    minimum=prices[0]
+    res=0
+    for i in range(1,n):
+        minimum = min(minimum , prices[i])
+        res = max(res , prices[i] - minimum)
+    return res
+
+
+prices = [7, 10, 1, 3, 6, 9, 2]
+print(maxProfit(prices))
