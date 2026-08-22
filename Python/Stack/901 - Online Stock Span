@@ -1,17 +1,40 @@
-""" The stock span is the number of consecutive days, including the current day, for which 
-the stock price was less than or equal to today's price. The problem is solved 
-using a monotonic decreasing stack that stores each price along with its calculated span.
+"""
+Problem: Online Stock Span
+
+The stock span is the number of consecutive days, including the current day,
+for which the stock price was less than or equal to today's price.
+
+The problem is solved using a monotonic decreasing stack.
+The stack stores each price along with its calculated span.
 
 Example:
-Input: [100, 80, 60, 70, 60, 75, 85]
+Input:  [100, 80, 60, 70, 60, 75, 85]
 Output: [1, 1, 1, 2, 1, 4, 6]
 
-For 75, the previous consecutive prices 60, 70, 60, and 75 are less than or equal to 75, so its span is 4.
+For 75, the previous consecutive prices 60, 70, 60, and 75 are
+less than or equal to 75, so its span is 4.
 
-Time Complexity: O(n)
-
+Time Complexity: O(n) amortized
 Space Complexity: O(n)
 """
-#solution
-def StockSpanner(price):
-    
+
+
+def stock_spanner(prices):
+    stack = []
+    result = []
+
+    for price in prices:
+        span = 1
+
+        while stack and stack[-1][0] <= price:
+            previous_price, previous_span = stack.pop()
+            span += previous_span
+
+        stack.append((price, span))
+        result.append(span)
+
+    return result
+
+
+prices = [100, 80, 60, 70, 60, 75, 85]
+print(stock_spanner(prices))
